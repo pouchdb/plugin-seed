@@ -1,11 +1,24 @@
 {
   "name": "pouchdb-plugin-seed",
   "version": "0.1.0",
-  "description": "PouchDB Plugin Seed",
+  "description": "PouchDB Plugin Seed project",
   "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git://github.com/pouchdb/plugin-seed.git"
+  },
+  "keywords": [
+    "pouch",
+    "pouchdb",
+    "plugin",
+    "seed",
+    "couch",
+    "couchdb"
+  ],
+  "author": "",
+  "license": "Apache",
+  "bugs": {
+    "url": "https://github.com/pouchdb/plugin-seed/issues"
   },
   "scripts": {
     "test-node": "TEST_DB=testdb,http://localhost:5984/testdb istanbul test ./node_modules/mocha/bin/_mocha test/test.js",
@@ -16,18 +29,6 @@
     "dev": "browserify test/test.js > test/test-bundle.js && npm run dev-server",
     "dev-server": "./bin/dev-server.js",
     "coverage": "npm test --coverage && istanbul check-coverage --lines 100 --function 100 --statements 100 --branches 100"
-  },
-  "keywords": [
-    "pouch",
-    "pouchdb",
-    "mapreduce",
-    "couch",
-    "couchdb"
-  ],
-  "author": "",
-  "license": "Apache",
-  "bugs": {
-    "url": "https://github.com/pouchdb/plugin-seed/issues"
   },
   "dependencies": {
     "lie": "^2.6.0",

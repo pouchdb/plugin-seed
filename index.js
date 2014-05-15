@@ -4,10 +4,11 @@ var utils = require('./pouch-utils');
 
 exports.sayHello = utils.toPromise(function (callback) {
   //
-  // Use this to get the db or PouchDB objects
+  // You can use the following code to 
+  // get the pouch or PouchDB objects
   //
-  // var db = this;
-  // var PouchDB = db.constructor;
+  // var pouch = this;
+  // var PouchDB = pouch.constructor;
 
   callback(null, 'hello');
 });

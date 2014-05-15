@@ -1,5 +1,5 @@
 (function () {
-  'use strict'
+  'use strict';
   // minimal polyfill for phantomjs; in the future, we should do ES5_SHIM=true like pouchdb
   if (!Function.prototype.bind) {
     Function.prototype.bind = function (oThis) {

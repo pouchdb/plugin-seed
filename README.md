@@ -14,7 +14,7 @@ Your plugin is now located at `dist/pouchdb.mypluginname.js` and `dist/pouchdb.m
 Getting Started
 -------
 
-**First**, change the `name` in `package.json` to whatever you want to call your plugin.  Change the `build` script to build whatever you want to name your plugin (i.e. not `pouchdb.mypluginname.js`).  Also, change the authors, description, git repo, etc.
+**First**, change the `name` in `package.json` to whatever you want to call your plugin.  Change the `build` script so that it writes to the desired filename (e.g. `pouchdb.mypluginname.js`).  Also, change the authors, description, git repo, etc.
 
 **Next**, modify the `index.js` to do whatever you want your plugin to do.  Right now it just adds a `pouch.sayHello()` function that says hello:
 

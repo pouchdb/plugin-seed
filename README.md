@@ -82,7 +82,7 @@ What to tell your users
 
 Below is some boilerplate you can use for when you want a real README for your users.
 
-To use this plug, include it after `pouchdb.js` in your HTML page:
+To use this plugin, include it after `pouchdb.js` in your HTML page:
 
 ```html
 <script src="pouchdb.js"></script>

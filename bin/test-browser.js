@@ -167,13 +167,10 @@ function startTest() {
   });
 }
 
-devserver.start();
-
-// http proxy takes awhile to start up
-setTimeout(function () {
+devserver.start(function () {
   if (client.runner === 'saucelabs') {
     startSauceConnect(startTest);
   } else {
     startSelenium(startTest);
   }
-}, 5000);
+});

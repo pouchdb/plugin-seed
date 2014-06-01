@@ -1,6 +1,8 @@
 PouchDB Plugin Seed
 =====
 
+[![Build Status](https://travis-ci.org/pouchdb/plugin-seed.svg)](https://travis-ci.org/pouchdb/plugin-seed)
+
 Fork this project to build your first PouchDB plugin.  It contains everything you need to test in Node, WebSQL, and IndexedDB.  It also includes a Travis config file so you
 can automatically run the tests in Travis.
 
@@ -74,3 +76,28 @@ You can run e.g.
     CLIENT=selenium:phantomjs npm test
 
 This will run the tests automatically and the process will exit with a 0 or a 1 when it's done. Firefox uses IndexedDB, and PhantomJS uses WebSQL.
+
+What to tell your users
+--------
+
+Below is some boilerplate you can use for when you want a real README for your users.
+
+To use this plug, include it after `pouchdb.js` in your HTML page:
+
+```html
+<script src="pouchdb.js"></script>
+<script src="pouchdb.mypluginname.js"></script>
+```
+
+Or to use it in Node.js, just npm install it:
+
+```
+npm install pouchdb-myplugin
+```
+
+And then attach it to the `PouchDB` object:
+
+```js
+var PouchDB = require('pouchdb');
+PouchDB.plugin(require('pouchdb-myplugin'));
+```

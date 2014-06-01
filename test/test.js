@@ -21,7 +21,7 @@ require('bluebird'); // var Promise = require('bluebird');
 var dbs;
 if (process.browser) {
   dbs = 'testdb' + Math.random() +
-    ',http://localhost:2021/testdb' + Math.round(Math.random() * 100000);
+    ',http://localhost:5984/testdb' + Math.round(Math.random() * 100000);
 } else {
   dbs = process.env.TEST_DB;
 }

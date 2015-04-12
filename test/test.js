@@ -1,13 +1,13 @@
 /*jshint expr:true */
 'use strict';
 
-var Pouch = require('pouchdb');
+var PouchDB = require('pouchdb');
 
 //
 // your plugin goes here
 //
-var helloPlugin = require('../');
-Pouch.plugin(helloPlugin);
+var thePlugin = require('../');
+PouchDB.plugin(thePlugin);
 
 var chai = require('chai');
 chai.use(require("chai-as-promised"));
@@ -36,11 +36,11 @@ function tests(dbName, dbType) {
   var db;
 
   beforeEach(function () {
-    db = new Pouch(dbName);
+    db = new PouchDB(dbName);
     return db;
   });
   afterEach(function () {
-    return Pouch.destroy(dbName);
+    return db.destroy();
   });
   describe(dbType + ': hello test suite', function () {
     it('should say hello', function () {

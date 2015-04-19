@@ -10,7 +10,6 @@ var thePlugin = require('../');
 PouchDB.plugin(thePlugin);
 
 var chai = require('chai');
-chai.use(require("chai-as-promised"));
 
 //
 // more variables you might want

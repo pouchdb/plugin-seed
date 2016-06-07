@@ -10,12 +10,7 @@ var thePlugin = require('../');
 PouchDB.plugin(thePlugin);
 
 var chai = require('chai');
-
-//
-// more variables you might want
-//
-chai.should(); // var should = chai.should();
-require('bluebird'); // var Promise = require('bluebird');
+chai.should();
 
 var dbs;
 if (process.browser) {

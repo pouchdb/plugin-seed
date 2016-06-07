@@ -33,13 +33,9 @@
     "coverage": "npm test --coverage && istanbul check-coverage --lines 100 --function 100 --statements 100 --branches 100"
   },
   "dependencies": {
-    "lie": "^2.6.0",
-    "inherits": "~2.0.1",
-    "argsarray": "0.0.1",
-    "pouchdb-promise": "5.4.0"
+    "pouchdb-utils": "5.4.0"
   },
   "devDependencies": {
-    "bluebird": "^2.0.0",
     "browserify": "^12.0.2",
     "chai": "^3.5.0",
     "derequire": "^2.0.0",

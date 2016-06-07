@@ -1,10 +1,10 @@
 'use strict';
 
-var utils = require('./pouch-utils');
+var utils = require('pouchdb-utils');
 
 exports.sayHello = utils.toPromise(function (callback) {
   //
-  // You can use the following code to 
+  // You can use the following code to
   // get the pouch or PouchDB objects
   //
   // var pouch = this;

@@ -1,7 +1,7 @@
 /*jshint expr:true */
 'use strict';
 
-var PouchDB = require('pouchdb');
+var PouchDB = require('pouchdb-memory');
 
 //
 // your plugin goes here
@@ -12,15 +12,9 @@ PouchDB.plugin(thePlugin);
 var chai = require('chai');
 chai.should();
 
-var dbs;
-if (process.browser) {
-  dbs = 'testdb' + Math.random() +
-    ',http://localhost:5984/testdb' + Math.round(Math.random() * 100000);
-} else {
-  dbs = process.env.TEST_DB;
-}
+var dbs = ['testdb', 'http://localhost:5984/testdb'];
 
-dbs.split(',').forEach(function (db) {
+dbs.forEach(function (db) {
   var dbType = /^http/.test(db) ? 'http' : 'local';
   tests(db, dbType);
 });

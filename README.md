@@ -44,38 +44,35 @@ Testing
 
 ### In Node
 
-This will run the tests in Node using LevelDB:
+This will run the tests in Node:
 
     npm test
-    
+   
+You can also run a subset of tests:
+
+    npm test -- --grep=mysearch
+
 You can also check for 100% code coverage using:
 
-    npm run coverage
+    npm run test-coverage
 
 If you don't like the coverage results, change the values from 100 to something else in `package.json`, or add `/*istanbul ignore */` comments.
 
-
-If you have mocha installed globally you can run single test with:
-```
-TEST_DB=local mocha --reporter spec --grep search_phrase
-```
-
-The `TEST_DB` environment variable specifies the database that PouchDB should use (see `package.json`).
-
 ### In the browser
 
-Run `npm run dev` and then point your favorite browser to [http://127.0.0.1:8001/test/index.html](http://127.0.0.1:8001/test/index.html).
+Run `npm run test-local` and then point your favorite browser to [http://127.0.0.1:3000/__zuul](http://127.0.0.1:3000/__zuul).
 
 The query param `?grep=mysearch` will search for tests matching `mysearch`.
 
+**Warning:** CouchDB tests will fail unless you enable CORS. You can do so by running `npm install -g add-cors-to-couchdb` and then `add-cors-to-couchdb`.
+
 ### Automated browser tests
 
-You can run e.g.
+You can run
 
-    CLIENT=selenium:firefox npm test
-    CLIENT=selenium:phantomjs npm test
+    npm run test-browser
 
-This will run the tests automatically and the process will exit with a 0 or a 1 when it's done. Firefox uses IndexedDB, and PhantomJS uses WebSQL.
+This will run the tests automatically and the process will exit with a 0 or a 1 when it's done. This uses PhantomJS under the hood.
 
 What to tell your users
 --------

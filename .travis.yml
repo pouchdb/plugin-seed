@@ -4,7 +4,7 @@ services:
   - couchdb
 
 node_js:
-  - "0.10"
+  - "5"
 script: npm run $COMMAND
 before_script:
   - "export DISPLAY=:99.0"
@@ -33,3 +33,4 @@ branches:
   only:
   - master
   - /^pull*$/
+  - /^greenkeeper/.*$/

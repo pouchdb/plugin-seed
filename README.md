@@ -1,6 +1,8 @@
 PouchDB Plugin Seed
 =====
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/pouchdb/plugin-seed.svg)](https://greenkeeper.io/)
+
 [![Build Status](https://travis-ci.org/pouchdb/plugin-seed.svg)](https://travis-ci.org/pouchdb/plugin-seed)
 
 Fork this project to build your first PouchDB plugin.  It contains everything you need to test in Node, WebSQL, and IndexedDB.  It also includes a Travis config file so you

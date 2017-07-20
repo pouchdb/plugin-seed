@@ -1,22 +1,57 @@
-PouchDB Plugin Seed
+pouchdb-silverlining
 =====
 
 [![Build Status](https://travis-ci.org/ibm-watson-data-lab/pouchdb-silverlining.svg)](https://travis-ci.org/ibm-watson-data-lab/pouchdb-silverlining)
 
+The *pouchdb-silverlining* project is a [PouchDB](https://pouchdb.com) plugin that allows SQL queries to be performed against PouchDB databases. This mirrors the functionality found in the [silverlining](https://www.npmjs.com/package/silverlining) library.
 
-Building
-----
+## Installation
+
+To use this plugin, include it after `pouchdb.js` in your HTML page:
+
+```html
+<script src="pouchdb.js"></script>
+<script src="pouchdb.silverlining.js"></script>
+```
+
+Or to use it in Node.js, just npm install it:
+
+```
+npm install pouchdb-myplugin
+```
+
+And then attach it to the `PouchDB` object:
+
+```js
+var PouchDB = require('pouchdb');
+PouchDB.plugin(require('pouchdb-silverlining'));
+```
+
+## Usage
+
+Connect to your database as normal:
+
+```
+var db = new PouchDB('mydb');
+```
+
+and then query with SQL:
+
+```
+db.sql("SELECT name, cost FROM animals WHERE collection = 'cats' ORDER BY name DESC LIMIT 50").then(console.log);
+```
+
+
+
+## Building
+
     npm install
     npm run build
 
 Your plugin is now located at `dist/pouchdb.silverlining.js` and `dist/pouchdb.silverlining.min.js` and is ready for distribution.
 
-Getting Started
--------
 
-
-Testing
-----
+## Testing
 
 ### In Node
 
@@ -53,27 +88,5 @@ You can run e.g.
 
 This will run the tests automatically and the process will exit with a 0 or a 1 when it's done. Firefox uses IndexedDB, and PhantomJS uses WebSQL.
 
-What to tell your users
---------
 
-Below is some boilerplate you can use for when you want a real README for your users.
 
-To use this plugin, include it after `pouchdb.js` in your HTML page:
-
-```html
-<script src="pouchdb.js"></script>
-<script src="pouchdb.silverlining.js"></script>
-```
-
-Or to use it in Node.js, just npm install it:
-
-```
-npm install pouchdb-myplugin
-```
-
-And then attach it to the `PouchDB` object:
-
-```js
-var PouchDB = require('pouchdb');
-PouchDB.plugin(require('pouchdb-silverlining'));
-```

@@ -26,14 +26,16 @@
     "jshint": "jshint -c .jshintrc *.js test/test.js",
     "test": "npm run jshint && ./bin/run-test.sh",
     "build": "mkdirp dist && npm run browserify && npm run min",
-    "browserify": "browserify index.js | ./bin/es3ify.js | derequire > dist/pouchdb.mypluginname.js",
+    "browserify": "browserify index.js | ./bin/es3ify.js | derequire > dist/pouchdb.silverlining.js",
     "min": "uglifyjs dist/pouchdb.silverlining.js -mc > dist/pouchdb.silverlining.min.js",
     "dev": "browserify test/test.js > test/test-bundle.js && npm run dev-server",
     "dev-server": "./bin/dev-server.js",
     "coverage": "npm test --coverage && istanbul check-coverage --lines 100 --function 100 --statements 100 --branches 100"
   },
   "dependencies": {
-    "pouchdb-utils": "5.4.0"
+    "pouchdb-find": "^6.3.4",
+    "pouchdb-utils": "5.4.0",
+    "sqltomango": "^1.2.2"
   },
   "devDependencies": {
     "bluebird": "^3.4.0",

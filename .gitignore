@@ -3,4 +3,6 @@ node_modules
 *~
 coverage
 test/test-bundle.js
+animals
+test.js
 npm-debug.log

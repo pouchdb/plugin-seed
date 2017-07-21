@@ -1,16 +1,26 @@
 'use strict';
 
 var utils = require('pouchdb-utils');
+var sqltomango = require('sqltomango');
 
-exports.sayHello = utils.toPromise(function (callback) {
-  //
-  // You can use the following code to
-  // get the pouch or PouchDB objects
-  //
+exports.sql = utils.toPromise(function(query, callback) {
+
+  if (typeof query !== 'string') {
+    throw('query must be a string');
+  }
+
+  // parse the query and turn it into Mango/CQ object
+  var cq = sqltomango.parse(query);
+
+  // if this is a "SELECT * from cats" query
+  if (Object.keys(cq).length === 0 || !cq.selector) {
+    // add a dummy selector
+    cq.selector = {};
+  }
+
   // var pouch = this;
   // var PouchDB = pouch.constructor;
-
-  callback(null, 'hello');
+  return this.find(cq, callback);
 });
 
 /* istanbul ignore next */

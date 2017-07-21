@@ -36,10 +36,11 @@ function tests(dbName, dbType) {
   afterEach(function () {
     return db.destroy();
   });
-  describe(dbType + ': hello test suite', function () {
-    it('should say hello', function () {
-      return db.sayHello().then(function (response) {
-        response.should.equal('hello');
+
+  describe(dbType + ': silverlining test suite', function () {
+    it('should run sql query', function () {
+      return db.query("SELECT a,b,c FROM cats WHERE color='black' OR color='white'").then(function (response) {
+        response.should.equal({docs:[]});
       });
     });
   });

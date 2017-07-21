@@ -1,5 +1,4 @@
-pouchdb-silverlining
-=====
+# pouchdb-silverlining
 
 [![Build Status](https://travis-ci.org/ibm-watson-data-lab/pouchdb-silverlining.svg)](https://travis-ci.org/ibm-watson-data-lab/pouchdb-silverlining)
 
@@ -14,7 +13,7 @@ To use this plugin, include it after `pouchdb.js` in your HTML page:
 <script src="pouchdb.silverlining.js"></script>
 ```
 
-Or to use it in Node.js, just npm install it:
+Or to use it in Node.js, just npm install it in addition to PouchDB:
 
 ```
 npm install pouchdb-myplugin
@@ -41,6 +40,39 @@ and then query with SQL:
 db.sql("SELECT name, cost FROM animals WHERE collection = 'cats' ORDER BY name DESC LIMIT 50").then(console.log);
 ```
 
+Other example queries:
+
+```sql
+-- fetch all fields
+SELECT * FROM animalsdb
+
+-- fetch selected fields
+SELECT name, colour, price FROM animalsdb
+
+-- fetch data with WHERE clause
+SELECT name FROM animalsdb WHERE colour = 'tabby'
+
+-- fetch data with a more complex WHERE clause
+SELECT name FROM animalsdb WHERE type!='cat' OR (price > 500 AND price < 1000)
+
+-- limit the number of items returned
+SELECT name FROM animalsdb LIMIT 10
+
+-- limit the number of items and skip rows
+SELECT name FROM animalsdb LIMIT 20,10
+
+-- ordering ascending
+SELECT name FROM animalsdb ORDER BY price
+
+-- ordering descending
+SELECT name FROM animalsdb ORDER BY price DESC
+
+-- multiple field ordering descending
+SELECT name FROM animalsdb ORDER BY type,price
+
+-- all together
+SELECT name,colour,price FROM animalsdb WHERE type!='cat' OR (price > 500 AND price < 1000) ORDER BY type, price LIMIT 20,10
+```
 
 
 ## Building

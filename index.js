@@ -9,16 +9,18 @@ exports.sql = utils.toPromise(function(query, callback) {
     throw('query must be a string');
   }
 
+  // parse the query and turn it into Mango/CQ object
   var cq = sqltomango.parse(query);
 
   // if this is a "SELECT * from cats" query
   if (Object.keys(cq).length === 0 || !cq.selector) {
-    cq.selector = { _id: { "$gt": 0 }};
+    // add a dummy selector
+    cq.selector = {};
   }
 
   // var pouch = this;
   // var PouchDB = pouch.constructor;
-  this.find(cq, callback)
+  return this.find(cq, callback)
 });
 
 /* istanbul ignore next */

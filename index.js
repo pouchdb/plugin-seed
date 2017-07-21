@@ -20,7 +20,7 @@ exports.sql = utils.toPromise(function(query, callback) {
 
   // var pouch = this;
   // var PouchDB = pouch.constructor;
-  return this.find(cq, callback)
+  return this.find(cq, callback);
 });
 
 /* istanbul ignore next */
